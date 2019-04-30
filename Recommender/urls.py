@@ -24,7 +24,7 @@ from . import Comp
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('quiz/<int:UserId>/', Quiz.Recommend_Quizzes.as_view()),  # quiz/<int:skill_type>
-    path('candidate/', Cand.Recommend_Candidates.as_view()),  # quiz/<int:skill_type>
-    path('company/', Comp.Recommend_Companies.as_view()),  # quiz/<int:skill_type>
+    path('candidate/<>/', Cand.Recommend_Candidates.as_view()),  # quiz/<int:skill_type>
+    path('company/<>/', Comp.Recommend_Companies.as_view()),  # quiz/<int:skill_type>
 
 ]

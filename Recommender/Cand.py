@@ -1,6 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-
+import json
+import requests
 class Recommend_Candidates(APIView):
         def get(self, request):
             
@@ -9,7 +10,7 @@ class Recommend_Candidates(APIView):
          Company_ID = requests.get(url)
          CId = Company_ID.json()
 
-         url = 'http://127.0.0.1:8002/userman/comp/'     #Get list of all candidates that matches with it's interests
+         url = 'http://127.0.0.1:8002/userman/comp/' + str(CId)     #Get list of all candidates that matches with it's interests
          Candidates = requests.get(url)
          List_Candidates = Candidates.json()  
 
