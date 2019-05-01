@@ -1,7 +1,9 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from .forms import Form
 import json
 import requests
+
 
 # # Class Recommend_Companies to candidates
 
@@ -13,6 +15,7 @@ class Recommend_Companies(APIView):
         CId = candidate_ID.json()
         url = 'http://127.0.0.1:8002/userman/'  + str(CId)   #Get list of all companies that matches with his skills
         Companies = requests.get(url)
+        Companies.save()
         List_Companies = Companies.json()  #Convert JSON array to Python list
 
         return Response(List_Companies)
